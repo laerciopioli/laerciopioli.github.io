@@ -46,7 +46,10 @@
 									INESC P&D Brasil</h1>
 								</header>
 								<div class="image main"><img src="images/xx.png" alt="" /></div>
-								
+								<p>
+									INESC P&D Brazil is a non-governmental Scientific and Technological Institution, constituted as a nonprofit private association, aiming together with the Brazilian public universities and the Institute of Systems Engineering and Computers Technology and Science of Portugal (INESC TEC), to coordinate a network of cooperation in research, development and technology transfer in Brazil.
+								</p>
+								<p>I'm part of INESC BRASIL since 2018. There, I've contributed mainly in two projects (i) SIGOM and (ii) PSMORA. Below it is presented the focus of each project.</p>
 								<p>SIGOM - In the Intelligent Asset Maintenance and Operation Management System - (SIGOM) project, we prepared a plan for a distributed (physical and logical) data storage environment, and later we started to build middleware that would communicate and integrate Augmented Reality (AU) and Artificial Intelligence (IA) applications with the distributed storage system. To this end, we have prepared the entire infrastructure and server management base. Subsequently, we developed an application, respecting the demands of the data lake, to be able to intermediate the data that make up the design of the constituent layers. The development of a centralized server that has its mobile version was also built.</p>
 								<p>PSMORA - In the interconnected electroproducer system using multiprocessor architectures (PSMORA) project, we are investigating and developing distributed tools based on multiprocessor architecture in the context of coverage reserve and operational reserve of electrical power systems.</p>
 							</section>
@@ -59,14 +62,73 @@
 								<section  class="container">
 									
 								</p>
+								<p>Nowadays, scientific and industrial fields produce data at rates never seen before.
+									They usually produce an extensive amount of raw data that should be transformed and manipulated to be stored correctly considering different storage perspectives.
+									In many cases, due to the heterogeneity of the temporal data, these storage methods should be configured to make consistent data available for client consumption.
+									Considering raw data management of a natural industrial environment to support specific local tasks, in this paper, an industrial effort model in the context of virtual environment data access was constructed.
+									In this solution, the data were captured, processed, and available in almost real-time for in-loco staff through virtual reality (VR) technologies.
+									The usage of these virtualized technologies in industrial areas is challenging and promissory due to the wide variety of applications to support locale tasks.
+									The results presented are promising to support tasks and operational demands in complex industrial contexts</p>
+								<p><span class="image right"><img src="images/3PGCIC2021-DataFlow.png" alt="" /></span>
+									To solve such problems, we proposed an architecture for solving the industrial and data management problem.
+									The right figure shows the data flow employed by the data in the proposed architecture.
+									The data generation represents information sources that feed the environment, which can be device sensors, location sensors, other databases, and information manually entered by operators.
+									It is possible to observe that the data are generated in its initial phase and then consumed by a commercial on-premises system.
+									Such data and information are collected by the 'PI System', which receives, stores, and organizes data from plats or processes. 
+									It is a system intended for industrial temporal data storage.
+									It has several features that were designed to handle this type of data coming from industrial machines.
+									After its storage, the data is then delivered to an integration layer responsible for specific functionalities.
+									The first is the abstraction layer; the second is the simulation layer, and finally, the presentation layer.
+									After passing through the integration layer, the data is then accessed through an API developed by us to be introduced into a conventional web system.
+									This conventional web system serves as an access point for three other systems.
+									(i) Augmented Reality (AR) system, (ii) VR system, and a (iii) Mobile system.
+									Below, in the next section, \figurename~\ref{fig:ProposedArchitecture} explores each of these modules as much as the entire solution.
+								.</p>
+								<p><span class="image left"><img src="images/3PGCIC2021-Model2.png" alt="" /></span> 
+									The Figure at left representst the proposed architecture to solve the problem.
+									It is possible to observe that system modeling has three essential layers, namely: (i) in loco, (ii) backend, and (iii) frontend.
+									</br></br>									
+									In the first layer, in loco, we verify the existence of a set of machines and assets.
+									More specifically, the industrial machines are the T3000 Siemens and ABB 800xa.
+									The T3000 is connected to the ABBs via the OPC DA protocol. 
+									An OPC DA Server on the T3000 machine exports the data via a network to an OPC Client installed on the ABB 800xa machine. 
+									These industrial data are consumed by a system that organizes and collects all generated data, the PI System.
+									PI System is a system composed of many modules responsible for different functions in handling temporal data.
+									After that, there is another ABB integration for St. Historian (Symphony plus). 
+									On this host, the first module that connects directly with the assets is the PI interface.
+									PI Historian (Symphony plus) interface is installed in-place and does not need to be replicated to geographically distant locations due to its physical need to connect to plant assets.
+									It receives the raw data and prepares it to store it into a specific module of stored data.
+									Moreover, the PI Interface completes the connection, integrating the data into the PI Server.
+									PI Server is the main module to store data, and it is subdivided into two parts:
+									PI data archive server stores the information received from PI Interface in a robust way that is not easy for users to manipulate.
+									On the other hand, PI AF Server facilitates the organization of stored data, provides a friendlier interface, and allows users to visualize and understand the structure.
+									This module is responsible for maintaining and organizing all industrial data.
+									The data are then sent to PI Archive, which can be understood as a vast data cluster composed of heterogeneous temporal industry data.
+									</br></br>	
+									The middleware is a system responsible for connecting and requesting the reading of existing data in the PI System.
+									This layer is fundamental, as it presents the necessary functions so that both the control interface and the web system can obtain data directly from the PI System.
+									It is composed of an abstraction layer, a simulation layer, and finally, a presentation layer.
+									On the other hand, the API is the system responsible for connecting and accessing data previously organized by the integration layer with the web interface. 
+									Through this API, communication between the front end and the backend is established.
+									Thus, the VR, AU and Mobile modules, can communicate and obtain the data already preprocessed from the sources.
+									</br></br>
+									The web system is responsible for managing the activities carried out in the industry. 
+									It is registered and configures the essential elements (Database, Interfaces, etc.); thus, a Mobile APP as the Artificial Intelligence (AI) modules can make its connection and data readings.
+									The macro-elements that compose this architecture module are:
+									The user authentication module, by which each user responsible for performing specific tasks is managed.
+									The web system also has CRUD functionalities (Create, Read, Update and Delete), handling user data operations and data received by the in loco PI System.
+									This system was turned necessary by the architecture due to the complexity in handling the PI system's data.
+									PI Systems has a specific form of data management which were not compatible with those desired by the specified customers.
+									Therefore, this data needed to undergo specific and punctual changes before being consumed by the applications.
+
+								</p>
 								
-								<p><span class="image right"><img src="images/3PGCIC2021-DataFlow.png" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-								<span class="image left"><img src="images/3PGCIC2021-Model2.png" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis. 
 									 
 								</section >	
 							
 								<div class="box alt">
 									<h3>Process Details</h3>
+									<p>Here it is pressented some pictures that details our resulting system.</p>
 									<div class="row gtr-50 gtr-uniform">
 										<div class="col-4"><span class="image fit"><img src="images/3PGCIC2021-labmaq.png" alt="" /></span></div>
 										<div class="col-4"><span class="image fit"><img src="images/3PGCIC2021-iso_unity.png" alt="" /></span></div>
@@ -91,9 +153,28 @@
 							<div class="box">
 								<h2>PSMORA</h2>
 								<section  class="container">
-							Under Construction
+
 							</p>
-									 <p><span class="image right"><img src="images/PSMORA_Interface-REN.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
+								<p><span class="image right"><img src="images/PSMORA_Interface-REN.jpg" alt="" /></span>
+									Besides the development of the distributed tools based on multiprocessor architecture, the interconnected electroproducer multiprocessor architectures system (PSMORA), which is a DOS-based system, imposes some difficult to be used by some users.
+									It requires a previous and code line computing knoledge to handle the software and, because of that, a multi-layers intersection software should be created.
+									Therefore, to suport the aspect that some stakeholders still need support in handling the system, an interface that connect all the nodules in a friendly way is required and developed.
+									The proposed interface allows the interaction between three specific softwares (i) c++ application, (ii) Web Application (C# ASP.NET MVC) and (iii) Shell script.
+								</br></br>
+									Many advantages can be obtained to the used of this approach (e.g., Hystoric of expeimentations and results, Job scheduling,  Analytics, etc.)
+									For this project, we employed the used of the Aspnet Core MVC framework to act as a web application that intermediates the user access and the software execution.
+									The image on the side describes the proposed solution.
+									Initially, the user employs an external access to the servers according to the required security definitions.
+									After that, a server located in the LAN is responsible for calling the nodules and execute the interface.
+									The interface than, export files that are read by local services instructing the system in executing the software.
+									As the software employs distriuted and parallelized modules, their threads are them spread across the nodes.
+									Below we observe the interface application home page, the scheduling page, the experimental already created page and finally the creating page.
+									Below it is presented a video describing the modules interaction recorded in portuguese language.
+									<div class="super-card-text">
+										<li class="li-ornament"><a class="contact-link" href="https://youtu.be/5VLRhy1GEY4">Youtube video.</a></li>
+									</div>
+									
+								</p>
 									 
 									 
 								</section >	
